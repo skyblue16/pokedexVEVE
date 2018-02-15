@@ -1,11 +1,13 @@
 
 $(document).ready(function() {
+    $('.modal').modal();
+ 
 
   function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
   }
 
-  for (let i = 0; i < 19; i++) {
+  for (let i = 0; i < 1; i++) {
     let num = getRandomInt(0, 100);
     fetch(`https://pokeapi.co/api/v2/pokemon/${num}/`)
       .then(function(response) {
@@ -14,22 +16,32 @@ $(document).ready(function() {
       })
       .then(function(data) {
 
-     console.log(data);
+  console.log(data);
 
 
         let img = `https://pokeapi.co/media/img/${data.id}.png`;
      
         // Let's make some HTML!
         $('#myGif').append(
-          `<div class="col s2">
-          <img src="${img}" alt="" class="circle responsive-img">
+          ` <a class="  modal-trigger" href="#modal${data.id}">
+           <div class="col s2">
+          <img src="${img}" alt="" class="circle responsive-img" >
           <h5 class="black-text light">${data.name}</h5>
           <span class="black-text">Tipo: ${data.types[0].type.name}</span>
-           </div>`
+           </div>
+          </a>
+          <div id="modal${data.id}" class="modal bottom-sheet">
+          <div class="modal-content">
+          <img src="${img}" alt="" class="circle responsive-img" >
+          <h5 class="black-text light">${data.name}</h5>
+          <span class="black-text">Tipo: ${data.types[0].type.name}</span>
+          </div>
+          <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+          </div>
+        </div> ` 
         );
-
-
-
+        $('.modal').modal();
       });
   };
 
