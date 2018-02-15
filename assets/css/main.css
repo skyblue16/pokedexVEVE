@@ -2,25 +2,17 @@ body{
 	font-family: 'Lato', sans-serif ;
 }
 #search_btn {
-	
 	margin-top: 2em;
-	border: .5px solid white;
 }
 
-#titleMargin img{
-	width: 10%;
+.logo{
+	width: 15%;
 }
 
-
-.card .card-image img {
-     display: inline; 
-    border-radius: 2px 2px 0 0;
-    position: relative;
-    left: 0;
-    right: 0;
-    top: 0;
-    width: 60%;
-}
 h5{
 	text-transform: uppercase;
+}
+h1{
+	font-weight: 900;
+	letter-spacing: -5px;
 }

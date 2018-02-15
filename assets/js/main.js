@@ -78,6 +78,7 @@ $(document).ready(function() {
                   </div>
                   </div>
                   </div>
+                  <hr>
                `;
         myPoke.innerHTML = html;
       });
